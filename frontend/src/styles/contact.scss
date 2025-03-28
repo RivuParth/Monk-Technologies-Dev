@@ -1,0 +1,323 @@
+@import './main.scss';
+
+.contact_page {
+  .contact_hero {
+    background: linear-gradient(rgba($secondary-color, 0.8), rgba(0, 10, 5, 77)), url('../../public/images/slider-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    text-align: center;
+    color: $white;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+  }
+
+  .contact_section {
+    padding: 80px 0;
+    background-color: #ffffff;
+
+    .contact_info {
+      background: $white;
+      padding: 30px;
+      border-radius: 10px;
+      @include box-shadow;
+
+      h3 {
+        color: $secondary-color;
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+        position: relative;
+        padding-bottom: 15px;
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 50px;
+          height: 3px;
+          background-color: $primary-color;
+        }
+      }
+
+      .info_items {
+        .info_item {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 25px;
+
+          i {
+            font-size: 1.5rem;
+            color: $primary-color;
+            margin-right: 15px;
+            margin-top: 5px;
+          }
+
+          .info_content {
+            h4 {
+              color: $secondary-color;
+              font-size: 1.1rem;
+              margin-bottom: 5px;
+            }
+
+            p {
+              color: $text-color;
+              line-height: 1.6;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .contact_form {
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+      h3 {
+        color: #333;
+        margin-bottom: 30px;
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      .success-message {
+        background: linear-gradient(135deg, #28a745, #20c997);
+        color: white;
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        animation: slideIn 0.5s ease-out;
+
+        i {
+          font-size: 48px;
+          margin-bottom: 20px;
+          display: block;
+        }
+
+        h4 {
+          font-size: 24px;
+          margin-bottom: 15px;
+          font-weight: 600;
+        }
+
+        p {
+          font-size: 16px;
+          opacity: 0.9;
+        }
+      }
+
+      .error-message {
+        background: linear-gradient(135deg, #dc3545, #c82333);
+        color: white;
+        padding: 15px 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        animation: slideIn 0.5s ease-out;
+
+        &::before {
+          content: "⚠️";
+          margin-right: 10px;
+          font-size: 18px;
+        }
+      }
+
+      .form_group {
+        margin-bottom: 20px;
+
+        label {
+          display: block;
+          margin-bottom: 8px;
+          color: #555;
+          font-weight: 500;
+          font-size: 14px;
+
+          &::after {
+            content: "*";
+            color: #dc3545;
+            margin-left: 4px;
+          }
+        }
+
+        input,
+        textarea {
+          width: 100%;
+          padding: 12px 15px;
+          border: 2px solid #e9ecef;
+          border-radius: 8px;
+          font-size: 14px;
+          transition: all 0.3s ease;
+
+          &:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+            outline: none;
+          }
+
+          &::placeholder {
+            color: #adb5bd;
+          }
+        }
+
+        textarea {
+          resize: vertical;
+          min-height: 120px;
+        }
+      }
+
+      .submit-button {
+        background: linear-gradient(135deg, #007bff, #0056b3);
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        &:disabled {
+          background: linear-gradient(135deg, #6c757d, #5a6268);
+          cursor: not-allowed;
+          transform: none;
+          box-shadow: none;
+        }
+
+        &::before {
+          content: "";
+          width: 20px;
+          height: 20px;
+          border: 2px solid white;
+          border-radius: 50%;
+          border-top-color: transparent;
+          animation: spin 1s linear infinite;
+          display: none;
+        }
+
+        &:disabled::before {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .map_section {
+    padding: 0 0 80px;
+
+    .map_container {
+      border-radius: 10px;
+      overflow: hidden;
+      @include box-shadow;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contact_page {
+    .contact_hero {
+      padding: 60px 0;
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .contact_section {
+      padding: 40px 0;
+
+      .contact_info, .contact_form {
+        padding: 20px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Dark mode styles
+@media (prefers-color-scheme: dark) {
+  .contact_page {
+    .contact_form {
+      background: #1a1a1a;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+      h3 {
+        color: #fff;
+      }
+
+      .form_group {
+        label {
+          color: #e9ecef;
+        }
+
+        input,
+        textarea {
+          background: #f1f1f1;
+          border-color: #404040;
+          color: #000000;
+
+          &:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+          }
+
+          &::placeholder {
+            color: #6c757d;
+          }
+        }
+      }
+
+      .success-message {
+        background: linear-gradient(135deg, #2ecc71, #27ae60);
+      }
+
+      .error-message {
+        background: linear-gradient(135deg, #e74c3c, #c0392b);
+      }
+    }
+  }
+} 
