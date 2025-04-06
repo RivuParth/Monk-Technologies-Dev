@@ -13,6 +13,7 @@ $textCol: #1f1f1f;
 
 // Import other style files
 @import './contact.scss';
+@import './blog.scss';
 
 @mixin main-font {
   font-family: "Open Sans", sans-serif;

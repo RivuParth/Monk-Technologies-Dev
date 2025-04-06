@@ -29,7 +29,6 @@ const Header = () => {
 
           <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}>
             <ul className="navbar-nav">
-              
               <li className="nav-item">
                 <Link className="nav-link" to="/about" onClick={() => setIsOpen(false)}>
                   About
@@ -43,6 +42,11 @@ const Header = () => {
               <li className="nav-item">
                 <Link className="nav-link" to="/case-studies" onClick={() => setIsOpen(false)}>
                   Case Studies
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/blog" onClick={() => setIsOpen(false)}>
+                  Blog
                 </Link>
               </li>
               <li className="nav-item">
