@@ -76,7 +76,7 @@ const About = () => {
         <div className="about_hero">
           <div className="container">
             <h1>About Us</h1>
-            <p>Empowering businesses through innovative cloud solutions and expert DevOps practices</p>
+            <p>Empowering businesses through innovative cloud solutions and DevOps practices</p>
           </div>
         </div>
 
